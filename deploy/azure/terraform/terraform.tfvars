@@ -14,4 +14,5 @@ primary_database          = "sql-primary-database"
 primary_database_admin    = "app_user"
 primary_database_password = "dory@123"
 primary_database_version  = "12.0"
+host_os  = "windows"
 

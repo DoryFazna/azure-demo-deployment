@@ -53,6 +53,7 @@ module "compute" {
   app_host_name   = var.app_host_name
   app_username    = var.app_username
   app_os_password = var.app_os_password
+  host_os = var.host_os
 }
 
 

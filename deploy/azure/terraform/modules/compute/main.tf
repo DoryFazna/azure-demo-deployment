@@ -1,3 +1,11 @@
+resource "null_resource" "pre-run" {
+  provisioner "local-exec" {
+    command = "../../docker/docker-update-image.ps1"
+    interpreter = var.host_os == "windows" ? ["Powershell", "-Command"] : ["bash", "-c"]
+  }
+
+}
+
 resource "azurerm_availability_set" "web_availabilty_set" {
   name                = "web_availabilty_set"
   location            = var.location

@@ -8,3 +8,4 @@ variable "web_os_password" {}
 variable "app_host_name"{}
 variable "app_username" {}
 variable "app_os_password" {}
+variable "host_os" {}
