@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/votedata",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/vote",
+      "UpstreamHttpMethod": ["Get","Post"]
+    }
+  ],
+
+  "GlobalConfiguration": {}
+
+}
