@@ -86,6 +86,48 @@ resource "azurerm_network_interface" "app-net-interface" {
     }
 }
 
+resource "azurerm_network_interface" "gateway-nic" {
+    name = "gateway-nic"
+    resource_group_name = var.resource_group
+    location = var.location
+
+    ip_configuration{
+        name = "app-gatewayserver"
+        subnet_id = var.app_subnet_id
+        private_ip_address = "192.168.2.11"
+        private_ip_address_allocation = "Static"
+    }
+}
+
+resource "azurerm_linux_virtual_machine" "gateway-vm" {
+   name                = "gateway-vm"
+   location = var.location
+   resource_group_name = var.resource_group
+   network_interface_ids = [ azurerm_network_interface.gateway-nic.id ]
+   availability_set_id = azurerm_availability_set.app_availabilty_set.id
+   size                = "Standard_B1s"
+   admin_username      = "adminuser"
+
+   custom_data = filebase64("customdata-logic.tpl")
+
+   admin_ssh_key {
+     username   = "adminuser"
+     public_key = file("~/.ssh/mtcazurekey.pub")
+   }
+
+   os_disk {
+     caching              = "ReadWrite"
+     storage_account_type = "Standard_LRS"
+   }
+
+   source_image_reference {
+     publisher = "Canonical"
+     offer     = "UbuntuServer"
+     sku       = "18.04-LTS"
+     version   = "latest"
+   }
+ }
+
 resource "azurerm_linux_virtual_machine" "app-vm" {
    name                = "app-vm"
    location = var.location
@@ -160,6 +202,8 @@ resource "azurerm_linux_virtual_machine" "app-vm2" {
 
 
 
+
+
  #-------------------------- load balancers for web --------------------------
 
  resource "azurerm_lb" "mtc-lb" {
@@ -170,7 +214,7 @@ resource "azurerm_linux_virtual_machine" "app-vm2" {
 
   frontend_ip_configuration {
     name                 = "FrontendIPForWebLoadBalancer"
-    private_ip_address = "192.168.2.11"
+    private_ip_address = "192.168.2.12"
     private_ip_address_allocation = "Static"
     subnet_id = var.app_subnet_id
   }

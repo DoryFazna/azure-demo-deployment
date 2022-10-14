@@ -8,7 +8,7 @@
     using Microsoft.EntityFrameworkCore;
     using VotingData.Models;
 
-    [Route("api/[controller]")]
+    [Route("vote/[controller]")]
     [ApiController]
     public class VoteDataController : ControllerBase
     {
