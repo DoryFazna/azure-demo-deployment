@@ -2,18 +2,36 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/vote/votedata",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.2.11",
+          "Host": "localhost",
           "Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/VoteData",
-      "UpstreamHttpMethod": ["Get","Post"]
+      "UpstreamHttpMethod": ["Get"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/vote/votedata/{item}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/VoteData/{item}",
+      "UpstreamHttpMethod": ["Put","Delete"]
     }
   ],
 
-  "GlobalConfiguration": {}
+  
+
+  "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5223"
+
+  }
 
 }

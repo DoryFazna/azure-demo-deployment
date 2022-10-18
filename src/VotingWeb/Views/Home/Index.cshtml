@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "What's For Lunch?";
+    ViewData["vm"] = "vm1";
 }
 
 <div ng-controller="VotingAppController" ng-init="refresh()">
@@ -7,6 +8,7 @@
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2 text-center">
                 <h2>@ViewData["Title"]</h2>
+                <h2>@Environment.GetEnvironmentVariable("VM")</h2>
             </div>
         </div>
 
