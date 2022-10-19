@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,11 @@ namespace VotingData
 
             var connection = Configuration.GetValue<string>("ConnectionStrings:SqlDbConnection");
             services.AddDbContext<VotingDBContext>(options => options.UseSqlServer(connection));
+
+            services.AddHealthChecks().AddSqlServer("string-here");
+
+            services.AddHealthChecksUI();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,10 @@ namespace VotingData
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseHealthChecks("/health");
+
+            app.UseHealthChecksUI();
 
             // We will just create the table on startup if it doesn't exist since this is a demo
             using (var serviceScope = app.ApplicationServices.CreateScope())
