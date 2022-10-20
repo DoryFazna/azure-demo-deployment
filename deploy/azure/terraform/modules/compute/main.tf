@@ -41,7 +41,7 @@ resource "azurerm_linux_virtual_machine" "web-vm" {
    size                = "Standard_B1s"
    admin_username      = "adminuser"
 
-   custom_data = filebase64("customdata-app.tpl")
+   custom_data = filebase64("customdata/inspectionApp/customdata-app.tpl")
 
    admin_ssh_key {
      username   = "adminuser"
@@ -82,7 +82,7 @@ resource "azurerm_linux_virtual_machine" "web-vm2" {
    size                = "Standard_B1s"
    admin_username      = "adminuser"
 
-   custom_data = filebase64("customdata-app2.tpl")
+   custom_data = filebase64("customdata/inspectionApp/customdata-app2.tpl")
 
    admin_ssh_key {
      username   = "adminuser"
@@ -127,7 +127,7 @@ resource "azurerm_linux_virtual_machine" "gateway-vm" {
    size                = "Standard_B1s"
    admin_username      = "adminuser"
 
-   custom_data = filebase64("customdata-gateway.tpl")
+   custom_data = filebase64("customdata/inspectionApp/customdata-gateway.tpl")
 
    admin_ssh_key {
      username   = "adminuser"
@@ -181,7 +181,7 @@ resource "azurerm_linux_virtual_machine" "app-vm" {
    size                = "Standard_B1s"
    admin_username      = "adminuser"
 
-   custom_data = filebase64("customdata-logic.tpl")
+   custom_data = filebase64("customdata/inspectionApp/customdata-logic.tpl")
 
    admin_ssh_key {
      username   = "adminuser"
@@ -290,7 +290,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "mtc-bp-as
 resource "azurerm_lb_probe" "mtc-lbp" {
   loadbalancer_id = azurerm_lb.mtc-lb.id
   name            = "mtc-lbp"
-  port            = 5001
+  port            = 7240
   depends_on = [
     azurerm_lb.mtc-lb
   ]
@@ -300,8 +300,8 @@ resource "azurerm_lb_rule" "mtc-lbrule" {
   loadbalancer_id = azurerm_lb.mtc-lb.id
   name                           = "mtc-lbrule"
   protocol                       = "Tcp"
-  frontend_port                  = 5001
-  backend_port                   = 5001
+  frontend_port                  = 7240
+  backend_port                   = 7240
   frontend_ip_configuration_name = "FrontendIPForAppLoadBalancer"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.mtc-bp.id]
   probe_id                       = azurerm_lb_probe.mtc-lbp.id
@@ -359,7 +359,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "web-bp-as
 resource "azurerm_lb_probe" "web-lbp" {
   loadbalancer_id = azurerm_lb.web-lb.id
   name            = "web-lbp"
-  port            = 5000
+  port            = 80
   depends_on = [
     azurerm_lb.web-lb
   ]
@@ -369,8 +369,8 @@ resource "azurerm_lb_rule" "web-lbrule" {
   loadbalancer_id = azurerm_lb.web-lb.id
   name                           = "web-lbrule"
   protocol                       = "Tcp"
-  frontend_port                  = 5000
-  backend_port                   = 5000
+  frontend_port                  = 80
+  backend_port                   = 80
   frontend_ip_configuration_name = "FrontendIPForWebLoadBalancer"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.web-bp.id]
   probe_id                       = azurerm_lb_probe.web-lbp.id
