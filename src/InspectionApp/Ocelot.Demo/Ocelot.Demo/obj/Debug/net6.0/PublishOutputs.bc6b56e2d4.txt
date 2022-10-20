@@ -1,0 +1,16 @@
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.Demo.exe
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\appsettings.json
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.json
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.Demo.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.Demo.deps.json
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.Demo.runtimeconfig.json
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.Demo.pdb
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\FluentValidation.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Newtonsoft.Json.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Newtonsoft.Json.Bson.dll
+C:\Users\FaznaF\Documents\azure-demo-deployment\src\gateway\Ocelot.Demo\Ocelot.Demo\bin\Debug\net6.0\publish\Ocelot.dll

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NyS+TK6T6AUV9IKr+aG3N62XTLubYLDs9yRTPSfLQxY=",
+  "Source": "Ocelot.Demo",
+  "BasePath": "_content/Ocelot.Demo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

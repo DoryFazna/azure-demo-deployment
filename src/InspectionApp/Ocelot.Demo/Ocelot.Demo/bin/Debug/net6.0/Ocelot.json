@@ -1,0 +1,60 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/inspections",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/inspections",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/inspections/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/inspections/{id}",
+      "UpstreamHttpMethod": ["Put", "Delete"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/inspectionTypes",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/inspectionTypes",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/inspectionTypes/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/inspectionTypes/{id}",
+      "UpstreamHttpMethod": ["Put", "Delete"]
+    }
+  ],
+
+  
+
+  "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5223"
+
+  }
+
+}
