@@ -5,7 +5,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "192.168.2.12",
           "Port": 7240
         }
       ],
@@ -17,7 +17,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "192.168.2.12",
           "Port": 7240
         }
       ],
@@ -29,7 +29,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "192.168.2.12",
           "Port": 7240
         }
       ],
@@ -41,7 +41,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "192.168.2.12",
           "Port": 7240
         }
       ],
@@ -53,7 +53,7 @@
   
 
   "GlobalConfiguration": {
-        "BaseUrl": "http://localhost:5223"
+        "BaseUrl": "https://192.168.2.11:7223"
 
   }
 

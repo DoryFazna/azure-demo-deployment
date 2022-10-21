@@ -4,4 +4,4 @@ services:
     build: .
     image: dorydoo/inspection-gateway
     ports:
-      - "5223:80"
+      - "7223:80"

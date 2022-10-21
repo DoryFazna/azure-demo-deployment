@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class InspectionApiService {
 
-  readonly inspectionAPIUrl = "https://192.168.2.11:5223";
+  readonly inspectionAPIUrl = "https://192.168.2.11:7223";
 
   constructor(private http:HttpClient) { }
 

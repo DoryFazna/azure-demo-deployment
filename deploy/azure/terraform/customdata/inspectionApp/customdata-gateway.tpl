@@ -12,4 +12,4 @@ sudo apt-get update -y &&
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y &&
 sudo usermod -aG docker ubuntu
 
-docker run -d -p 5223:80 dorydoo/inspection-gateway
+docker run -d -p 7223:80 dorydoo/inspection-gateway

@@ -53,7 +53,7 @@
   
 
   "GlobalConfiguration": {
-        "BaseUrl": "http://192.168.2.11:5223"
+        "BaseUrl": "https://192.168.2.11:7223"
 
   }
 

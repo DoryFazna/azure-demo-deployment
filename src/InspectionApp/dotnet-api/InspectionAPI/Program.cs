@@ -11,6 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHealthChecks().AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
@@ -45,5 +48,8 @@ app.UseCors(myAllowSpecificOrigins);
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapHealthChecks("/healthcheck");
+app.MapHealthChecksUI();
 
 app.Run();
