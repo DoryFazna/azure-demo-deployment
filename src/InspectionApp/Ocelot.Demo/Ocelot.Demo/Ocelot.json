@@ -2,7 +2,7 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/inspections",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "192.168.2.12",
@@ -14,7 +14,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspections/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "192.168.2.12",
@@ -26,7 +26,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspectionTypes",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "192.168.2.12",
@@ -38,7 +38,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspectionTypes/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "192.168.2.12",
