@@ -2,10 +2,10 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/inspections",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.2.12",
+          "Host": "localhost",
           "Port": 7240
         }
       ],
@@ -14,10 +14,10 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspections/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.2.12",
+          "Host": "localhost",
           "Port": 7240
         }
       ],
@@ -26,10 +26,10 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspectionTypes",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.2.12",
+          "Host": "localhost",
           "Port": 7240
         }
       ],
@@ -38,14 +38,38 @@
     },
     {
       "DownstreamPathTemplate": "/api/inspectionTypes/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.2.12",
+          "Host": "localhost",
           "Port": 7240
         }
       ],
       "UpstreamPathTemplate": "/inspectionTypes/{id}",
+      "UpstreamHttpMethod": ["Put", "Delete"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/status",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/status",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/status/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/status/{id}",
       "UpstreamHttpMethod": ["Put", "Delete"]
     }
   ],
@@ -53,7 +77,7 @@
   
 
   "GlobalConfiguration": {
-        "BaseUrl": "https://192.168.2.11:7223"
+        "BaseUrl": "http://localhost:7223"
 
   }
 

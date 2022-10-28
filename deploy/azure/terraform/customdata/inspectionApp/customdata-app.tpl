@@ -12,4 +12,4 @@ sudo apt-get update -y &&
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y &&
 sudo usermod -aG docker ubuntu
 
-docker run -d --env VM=vm1 -p 80:80 dorydoo/inspection-app
+docker run -d --env VM=vm1 -p 4200:4200 dorydoo/inspection-app

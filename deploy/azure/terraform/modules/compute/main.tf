@@ -359,7 +359,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "web-bp-as
 resource "azurerm_lb_probe" "web-lbp" {
   loadbalancer_id = azurerm_lb.web-lb.id
   name            = "web-lbp"
-  port            = 80
+  port            = 4200
   depends_on = [
     azurerm_lb.web-lb
   ]
@@ -369,8 +369,8 @@ resource "azurerm_lb_rule" "web-lbrule" {
   loadbalancer_id = azurerm_lb.web-lb.id
   name                           = "web-lbrule"
   protocol                       = "Tcp"
-  frontend_port                  = 80
-  backend_port                   = 80
+  frontend_port                  = 4200
+  backend_port                   = 4200
   frontend_ip_configuration_name = "FrontendIPForWebLoadBalancer"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.web-bp.id]
   probe_id                       = azurerm_lb_probe.web-lbp.id

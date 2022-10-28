@@ -17,19 +17,7 @@ builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-// Enable CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: myAllowSpecificOrigins,
-        builder =>
-        {
-            builder.WithOrigins("http://localhost:4200")
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-        });
+    options.UseSqlServer("Server=tcp:sql-primary-database.database.windows.net,1433;Initial Catalog=db;Persist Security Info=False;User ID=app_user;Password=dory@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 });
 
 var app = builder.Build();
@@ -42,8 +30,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors(myAllowSpecificOrigins);
 
 app.UseAuthorization();
 

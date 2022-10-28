@@ -12,9 +12,9 @@ $BASE_DIR = Get-Location
 # docker compose push
 
 # when deploying Inspection app
-cd $BASE_DIR/InspectionApp/angular-app
-docker compose build
-docker compose push
+# cd $BASE_DIR/InspectionApp/angular-app
+# docker compose build
+# docker compose push
 cd $BASE_DIR/InspectionApp/dotnet-api/InspectionAPI
 docker compose build
 docker compose push

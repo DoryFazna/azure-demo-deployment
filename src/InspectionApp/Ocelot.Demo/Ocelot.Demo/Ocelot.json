@@ -47,13 +47,37 @@
       ],
       "UpstreamPathTemplate": "/inspectionTypes/{id}",
       "UpstreamHttpMethod": ["Put", "Delete"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/status",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.2.12",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/status",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/status/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.2.12",
+          "Port": 7240
+        }
+      ],
+      "UpstreamPathTemplate": "/status/{id}",
+      "UpstreamHttpMethod": ["Put", "Delete"]
     }
   ],
 
   
 
   "GlobalConfiguration": {
-        "BaseUrl": "https://192.168.2.11:7223"
+        "BaseUrl": "http://192.168.2.11:7223"
 
   }
 
